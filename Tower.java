@@ -33,12 +33,10 @@ public abstract class Tower extends Ancient
 		return armor;
 	}
 
-	public void displayTowerDetails()
+	public String displayTowerDetails()
 	{
 		//you can either use this method or the toString override
-		System.out.println("\nTower tier " + getTowerTier() + " hitpoints: " + getHitpoints());
-		System.out.println("\nArmor: " + getArmor());
-		System.out.println("\n");
+		return "\nTower tier " + getTowerTier() + " hitpoints: " + getHitpoints() + "\nArmor: " + getArmor() + "\n";
 	}
 
 	public abstract void destroyed();
