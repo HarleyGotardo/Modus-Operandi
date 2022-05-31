@@ -17,18 +17,17 @@ public abstract class Hero
 	private String skill2;
 	private String skill3;
 	private String skill4;
-	private int firstSkillDamage;
-	private int secondSkillDamage;
-	private int thirdSkillDamage;
-	private int ultSkillDamage;
+	protected int firstSkillDamage;
+	protected int secondSkillDamage;
+	protected int thirdSkillDamage;
+	protected int ultSkillDamage;
 	private int skill1Level;
 	private int skill2Level;
 	private int skill3Level;
 	private int skill4Level;
 	protected int movementSpeed;
-	protected Boolean isMelee;
 
-	public Hero(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed, Boolean isMelee)
+	public Hero(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed)
 	{
 		this.heroName = heroName;
 		this.hitpoints = hitpoints;
@@ -56,7 +55,6 @@ public abstract class Hero
 		this.skill3Level = skill3Level;
 		this.skill4Level = skill4Level;
 		this.movementSpeed = movementSpeed;
-		this.isMelee = isMelee;
 	}
 
 	public String getHeroName()
@@ -179,11 +177,6 @@ public abstract class Hero
 		return movementSpeed;
 	}
 
-	public Boolean getIsMelee()
-	{
-		return isMelee;
-	}
-
 	public double getManaRegeneration()
 	{
 		return manaRegeneration;
@@ -209,9 +202,9 @@ public abstract class Hero
 	public abstract void killedACreep(Hero h);
 	public abstract void attackCreeps(Creep c);
 	public abstract void firstSkill(Hero h);
-	public abstract void secondSkill();
-	public abstract void thirdSkill();
-	public abstract void ultimateSkill();
+	public abstract void secondSkill(Hero h);
+	public abstract void thirdSkill(Hero h);
+	public abstract void ultimateSkill(Hero h);
 	public abstract void levelUp(Hero h);
 	public abstract void consecutiveAttacks(int n, Hero h);
 	public abstract void die(Hero h);

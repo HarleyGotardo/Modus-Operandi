@@ -7,34 +7,39 @@ public class Razor extends Hero
 	//basic attack method to be implemented
 	//skills methods to be implemented
 
-	public Razor(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed, Boolean isMelee) 
+	public Razor(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed) 
 	{
-		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed, isMelee);
+		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed);
 	}
 
 	@Override
-	public void firstSkill(Hero h)
+	public void firstSkill(Hero h) //plasma field
 	{
 		//code that will reduce puck's hitpoints base on razor's first skill's damage output.
 		//System.out.println("Razor used Plasma Field!");
+		h.hitpoints -= this.firstSkillDamage;
 	}
 
 	@Override
-	public void secondSkill() 
+	public void secondSkill(Hero h)  //static link
 	{
-		//skill codes to be implemented		
+		for(int i = 0; i <= 40; i++)
+		{
+			h.baseDamage -= i;
+			this.baseDamage += i;
+		}	
 	}
 
 	@Override
-	public void thirdSkill() 
+	public void thirdSkill(Hero h) //storm surge : add a movespeed to a hero.
 	{
-		//skill codes to be implemented		
+		this.movementSpeed += 20;	
 	}
 
 	@Override
-	public void ultimateSkill() 
+	public void ultimateSkill(Hero h) //eye of the storm
 	{
-		//skill codes to be implemented		
+		h.hitpoints -= this.ultSkillDamage;
 	}
 
 	@Override
@@ -66,8 +71,6 @@ public class Razor extends Hero
 	public void killedAHero(Hero h)
 	{
 		this.xp += 150;
-
-		System.out.println(this.heroName + " killed a hero. Experience gained.");
 
 		h.levelUp(h);
 	}

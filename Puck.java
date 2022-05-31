@@ -2,38 +2,45 @@ import java.util.Random;
 
 public class Puck extends Hero
 {
+
 	Random r = new Random();
 	//extends hero class
 	//basic attack method to be implemented
 	//skills methods to be implemented
-	public Puck(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed, Boolean isMelee) 
+	public Puck(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed) 
 	{
-		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed, isMelee);
+		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed);
 	}
 
 	@Override
-	public void firstSkill(Hero h) //first skill
+	public void firstSkill(Hero h) //illusory orb
 	{
 		//code that will reduce razor's hitpoints base on puck's first skill's damage output.
 		//System.out.println("Puck uses Illusory Orb!");
+		h.hitpoints -= this.firstSkillDamage;
 	}
 
 	@Override
-	public void secondSkill()
+	public void secondSkill(Hero h) //waning rift
 	{
 		//skill codes
+		h.hitpoints -= this.secondSkillDamage;
 	}
 
 	@Override
-	public void thirdSkill()
+	public void thirdSkill(Hero h) //phase shift: this will make puck invulnerable.
 	{
-		//skill codes							
+		h.baseDamage = 0;
+		h.firstSkillDamage = 0;
+		h.secondSkillDamage = 0;
+		h.thirdSkillDamage = 0;
+		h.ultSkillDamage = 0;							
 	}
 
 	@Override
-	public void ultimateSkill() 
+	public void ultimateSkill(Hero h) //dream coil
 	{
-		//skill codes
+		h.hitpoints -= this.ultSkillDamage;
 	}
 
 	@Override
@@ -152,4 +159,4 @@ public class Puck extends Hero
 		this.manaRegeneration += m.manaRegeneration;
 		this.hitpoints += m.addHealth;
 	}
-} 
+}
