@@ -7,9 +7,9 @@ public class Razor extends Hero
 	//basic attack method to be implemented
 	//skills methods to be implemented
 
-	public Razor(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed) 
+	public Razor(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed, int firstSkillManaCost, int secSkillManaCost, int thirdSkillManaCost, int ultSkillManaCost) 
 	{
-		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed);
+		super(heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed, firstSkillManaCost, secSkillManaCost, thirdSkillManaCost, ultSkillManaCost);
 	}
 
 	@Override
@@ -17,7 +17,9 @@ public class Razor extends Hero
 	{
 		//code that will reduce puck's hitpoints base on razor's first skill's damage output.
 		//System.out.println("Razor used Plasma Field!");
+
 		h.hitpoints -= this.firstSkillDamage;
+		this.manapoints -= this.firstSkillManaCost;	
 	}
 
 	@Override
@@ -28,6 +30,7 @@ public class Razor extends Hero
 			h.baseDamage -= i;
 			this.baseDamage += i;
 		}	
+		this.manapoints -= this.secSkillManaCost;	
 	}
 
 	@Override
@@ -40,6 +43,7 @@ public class Razor extends Hero
 	public void ultimateSkill(Hero h) //eye of the storm
 	{
 		h.hitpoints -= this.ultSkillDamage;
+		this.manapoints -= this.ultSkillManaCost;	
 	}
 
 	@Override

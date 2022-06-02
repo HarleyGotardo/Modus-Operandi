@@ -26,8 +26,12 @@ public abstract class Hero
 	private int skill3Level;
 	private int skill4Level;
 	protected int movementSpeed;
+	protected int firstSkillManaCost;
+	protected int secSkillManaCost;
+	protected int thirdSkillManaCost;
+	protected int ultSkillManaCost;
 
-	public Hero(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed)
+	public Hero(String heroName, int hitpoints, int manapoints, int manaRegeneration, int hpRegeneration, int strength, int agility, int intellegence, int gold, int xp, int level, int baseDamage, int baseArmor, String skill1, String skill2, String skill3, String skill4, int firstSkillDamage, int secondSkillDamage, int thirdSkillDamage, int ultSkillDamage, int skill1Level, int skill2Level, int skill3Level, int skill4Level, int movementSpeed, int firstSkillManaCost, int secSkillManaCost, int thirdSkillManaCost, int ultSkillManaCost)
 	{
 		this.heroName = heroName;
 		this.hitpoints = hitpoints;
@@ -190,6 +194,26 @@ public abstract class Hero
 	public void setLevel(int currentLevel)
 	{
 		this.level = currentLevel;
+	}
+
+	public int getFirstSkillManaCost()
+	{
+		return firstSkillManaCost;
+	}
+
+	public int getSecSkillManaCost()
+	{
+		return secSkillManaCost;
+	}
+
+	public int getThirdSkillManaCost()
+	{
+		return thirdSkillManaCost;
+	}
+
+	public int getUltSkillManaCost()
+	{
+		return ultSkillManaCost;
 	}
 	
 	public void displayHeroDetails()

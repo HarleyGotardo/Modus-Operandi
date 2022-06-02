@@ -3,11 +3,11 @@ public class DotaGame
 	public static void main(String[]args)
 	{
 		//Initialization of the Radiant's hero:
-		Hero razor = new Razor("Razor, The Lightning Revenant", 640, 327, 1, 2, 22, 27, 23, 600, 0, 1, 47, 3, "Plasma Field", "Static Link", "Storm Surge", "Eye of the Storm", 80, 0, 0, 60, 0, 0, 0, 0, 350);
+		Hero razor = new Razor("Razor, The Lightning Revenant", 640, 327, 1, 2, 22, 27, 23, 600, 0, 1, 47, 3, "Plasma Field", "Static Link", "Storm Surge", "Eye of the Storm", 80, 0, 0, 60, 1, 1, 1, 1, 350, 50, 75, 0, 100);
 		//heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed, isMelee
 		
 		//Instantiation of the Dire's hero:
-		Hero puck = new Puck("Puck, The Faerie Dragon", 540, 351, 2, 3, 17, 22, 23, 600, 0, 1, 45, 2, "Illusory Orb", "Waning Rift", "Phase Shift", "Dream Coil", 75, 70, 0, 125, 0, 0, 0, 0, 325); 
+		Hero puck = new Puck("Puck, The Faerie Dragon", 540, 351, 2, 3, 17, 22, 23, 600, 0, 1, 45, 2, "Illusory Orb", "Waning Rift", "Phase Shift", "Dream Coil", 75, 70, 0, 125, 1, 1, 1, 1, 325, 70, 65, 50, 150); 
 		//heroName, hitpoints, manapoints, manaRegeneration, hpRegeneration, strength, agility, intellegence, gold, xp, level, baseDamage, baseArmor, skill1, skill2, skill3, skill4, firstSkillDamage, secondSkillDamage, thirdSkillDamage, ultSkillDamage, skill1Level, skill2Level, skill3Level, skill4Level, movementSpeed, isMelee
 		
 		//The Radiant's attributes and initialization:
@@ -135,7 +135,8 @@ public class DotaGame
 		//<heroName>.levelUp(<heroName>);
 
 		//Calling of methods here:
-		razor.attack(puck);
+		puck.secondSkill(razor);
 		System.out.println(puck);
+		System.out.println(razor);
 	}
 }
