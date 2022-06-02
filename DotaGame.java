@@ -135,9 +135,7 @@ public class DotaGame
 		//<heroName>.levelUp(<heroName>);
 
 		//Calling of methods here:
-		clarityPotion.manaRegen(clarityPotion, razor);
-		razor.buyAttributeItem(ogreAxe);
-		puck.buyConsumableItem(enchantedMango);
 		razor.attack(puck);
+		System.out.println(puck);
 	}
 }

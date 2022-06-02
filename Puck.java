@@ -52,20 +52,8 @@ public class Puck extends Hero
 	@Override
 	public void attack(Hero h) 
 	{	
-		int finalDamage;
-		finalDamage = h.baseDamage;
-
-		if(this.baseDamage < h.baseArmor)
-		{
+		this.baseDamage -= h.baseArmor;
 		h.hitpoints -= this.baseDamage;
-		baseArmor = 0;
-		}
-
-		else if(h.baseArmor > 0)
-		{
-			finalDamage = this.baseDamage - h.baseArmor;
-		}
-		h.hitpoints -= finalDamage;
 	}
 
 	@Override
@@ -141,7 +129,7 @@ public class Puck extends Hero
 	public void buyAttributeItem(Attribute a) 
 	{	
 		this.strength += a.bonusStrength;
-		this.agility  += a.bonusAgility;
+		this.agility += a.bonusAgility;
 		this.intellegence += a.bonusIntelligence;
 	}
 
