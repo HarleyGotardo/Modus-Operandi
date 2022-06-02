@@ -132,9 +132,9 @@ public class Puck extends Hero
 	@Override
 	public void buyEquipmentItem(Equipment e) 
 	{
-		e.bonusDamage += this.baseDamage;
-		e.attackDamageBonusForRange += this.baseDamage;
-		e.bonusArmor += this.baseArmor;
+		this.baseDamage += e.bonusDamage;
+		this.baseDamage += e.attackDamageBonusForRange;
+		this.baseArmor += e.bonusArmor;
 	}
 
 	@Override
