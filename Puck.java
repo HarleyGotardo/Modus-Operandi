@@ -18,6 +18,7 @@ public class Puck extends Hero
 		//code that will reduce razor's hitpoints base on puck's first skill's damage output.
 		//System.out.println("Puck uses Illusory Orb!");
 		h.hitpoints -= this.firstSkillDamage;
+
 		this.manapoints -= this.firstSkillManaCost;
 	}
 
@@ -27,6 +28,8 @@ public class Puck extends Hero
 		//skill codes
 		h.hitpoints -= this.secondSkillDamage;
 		this.manapoints -= this.secSkillManaCost;
+
+		displayHeroDetails();
 	}
 
 	@Override
@@ -37,6 +40,7 @@ public class Puck extends Hero
 		h.secondSkillDamage = 0;
 		h.thirdSkillDamage = 0;
 		h.ultSkillDamage = 0;
+		
 		this.manapoints -= this.thirdSkillManaCost;
 	}
 

@@ -17,9 +17,8 @@ public class Razor extends Hero
 	{
 		//code that will reduce puck's hitpoints base on razor's first skill's damage output.
 		//System.out.println("Razor used Plasma Field!");
-
 		h.hitpoints -= this.firstSkillDamage;
-		this.manapoints -= this.firstSkillManaCost;	
+		this.manapoints -= this.firstSkillManaCost;
 	}
 
 	@Override
@@ -29,7 +28,7 @@ public class Razor extends Hero
 		{
 			h.baseDamage -= i;
 			this.baseDamage += i;
-		}	
+		}
 		this.manapoints -= this.secSkillManaCost;	
 	}
 
@@ -43,7 +42,7 @@ public class Razor extends Hero
 	public void ultimateSkill(Hero h) //eye of the storm
 	{
 		h.hitpoints -= this.ultSkillDamage;
-		this.manapoints -= this.ultSkillManaCost;	
+		this.manapoints -= this.ultSkillManaCost;
 	}
 
 	@Override
